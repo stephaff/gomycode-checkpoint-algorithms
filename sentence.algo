@@ -8,15 +8,16 @@ VAR
     cptMot: INTEGER:=1;
     point: CHAR:='.';
     espace: CHAR:=' ';
-    tabVoyelle: ARRAY_OF CHAR[6]:=['a','e','i','o','u','y'];
+    tabVoyelle: ARRAY_OF CHAR[6];
 BEGIN
+    tabVoyelle:={'a','e','i','o','u','y'}
     READ(sentence);
     WHILE (sentence[i]<>point) DO
         cptCaractere:=cptCaractere+1;
         IF (sentence[i]==espace) THEN
             cptMot:=cptMot+1;
         END_IF
-        FOR j FROM 1 TO 6 STEP 1  DO
+        FOR j FROM 0 TO 5 STEP 1  DO
            IF (sentence[i]==tabVoyelle[j]) THEN
             cptVoyelle:=cptVoyelle+1;
            END_IF 
