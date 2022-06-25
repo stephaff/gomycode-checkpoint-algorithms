@@ -1,0 +1,28 @@
+ALGORITHM sentenceMalipulation;
+VAR
+    sentence: STRING;
+    j: INTEGER;=1;
+    i: INTEGER:=1;
+    cptVoyelle: INTEGER:=0;
+    cptCaractere: INTEGER:=0;
+    cptMot: INTEGER:=1;
+    point: CHAR:='.';
+    espace: CHAR:=' ';
+    tabVoyelle: ARRAY_OF CHAR[6]:=['a','e','i','o','u','y'];
+BEGIN
+    READ(sentence);
+    WHILE (sentence[i]<>point) DO
+        cptCaractere:=cptCaractere+1;
+        IF (sentence[i]==espace) THEN
+            cptMot:=cptMot+1;
+        END_IF
+        FOR j FROM 1 TO 6 STEP 1  DO
+           IF (sentence[i]==tabVoyelle[j]) THEN
+            cptVoyelle:=cptVoyelle+1;
+           END_IF 
+        END_FOR
+    END_WHILE
+    WRITE("In this sentence, we are ",cptCaractere," characters");
+    WRITE("In this sentence, we are ",cptMot," words");
+    WRITE("In this sentence, we are ",cptVoyelle," vowels");
+END
