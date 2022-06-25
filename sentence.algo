@@ -1,7 +1,7 @@
 ALGORITHM sentenceMalipulation;
 VAR
     sentence: STRING;
-    j: INTEGER;=1;
+    j: INTEGER:=0;
     i: INTEGER:=1;
     cptVoyelle: INTEGER:=0;
     cptCaractere: INTEGER:=0;
